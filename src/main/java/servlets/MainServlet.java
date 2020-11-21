@@ -11,6 +11,7 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {"/cool-servlet", "/my-cool-servlet/*"})
 public class MainServlet extends HttpServlet {
     private double[] Arr = new double[6];
+    private String notification;
     Service service = new Service();
 
 
@@ -30,9 +31,12 @@ public class MainServlet extends HttpServlet {
         Arr[4] = Double.parseDouble(req.getParameter("b2"));
         Arr[5] = Double.parseDouble(req.getParameter("c2"));
 
-        String notification = service.gaussian(Arr);
+         notification = service.gaussian(Arr);
+
         req.setAttribute("notification", notification);
-        resp.getWriter().write("Result:\n " + notification + "\n");
+        getServletContext().getRequestDispatcher("/info.jsp").forward(req, resp);
+
+       // resp.getWriter().write("Result:\n " + notification + "\n");
 
     }
 
