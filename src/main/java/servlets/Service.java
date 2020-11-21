@@ -45,7 +45,7 @@ class Service {
 
             if (Math.abs(A[p][p]) <= 1e-10) {
                 System.out.println("NO");
-                return "NO";
+                return "NO Results";
             }
 
             for (int i = p + 1; i < N; i++) {
@@ -73,7 +73,7 @@ class Service {
         if (n < m) {
             System.out.print("INF");
         } else {
-            stringBuffer.append("YES ");
+            stringBuffer.append("Results: ");
             System.out.println("YES");
             for (int i = 0; i < N; i++) {
                 System.out.print(x[i] + " ");

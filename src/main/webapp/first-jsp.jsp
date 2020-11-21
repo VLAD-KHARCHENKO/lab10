@@ -7,8 +7,7 @@
     <title>First JSP</title>
 </head>
 <body>
-<h2>Equation</h2>
-${notification}
+<h2> Enter parameters of equation</h2>
 <form method="post" action="/my-app/cool-servlet">
     <h3>Enter a1:</h3>
     <input type="text" name="a1">
@@ -28,9 +27,5 @@ ${notification}
 
 </form>
 
-<c:if test="${not empty notification}">
-    <c:out value ="${notification}" />
-</c:if>
-<br/>
 </body>
 </html>
